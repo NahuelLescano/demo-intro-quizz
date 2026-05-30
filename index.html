@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Intro Quizz</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <canvas id="confetti" width="960" height="540" aria-hidden="true"></canvas>
+
+    <main class="shell">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand__glow">Intro Quizz</span>
+          <span class="brand__tag">un boton, pura adrenalina</span>
+        </div>
+        <div class="scores">
+          <div class="score">
+            <span class="score__label">Puntaje</span>
+            <span id="score" class="score__value">0</span>
+          </div>
+          <div class="score">
+            <span class="score__label">Mejor</span>
+            <span id="best" class="score__value">0</span>
+          </div>
+        </div>
+      </header>
+
+      <section class="card" id="card">
+        <div class="card__header">
+          <span class="pill" id="level">Nivel 1</span>
+          <button id="soundToggle" class="icon-btn" aria-pressed="false" title="Silencio">
+            Silencio: OFF
+          </button>
+        </div>
+        <h1 id="question" class="question">Presiona para arrancar</h1>
+        <div class="options" role="group" aria-label="Opciones">
+          <button class="option" id="opt0" type="button">Opcion A</button>
+          <button class="option" id="opt1" type="button">Opcion B</button>
+        </div>
+        <div class="feedback" id="feedback">Listo, genio</div>
+      </section>
+
+      <section class="overlay" id="gameOver" aria-live="polite" hidden>
+        <div class="overlay__card">
+          <span class="pill">Game Over</span>
+          <h2>Se corto la racha</h2>
+          <div class="overlay__scores">
+            <div>
+              <span class="overlay__label">Puntaje</span>
+              <span id="finalScore" class="overlay__value">0</span>
+            </div>
+            <div>
+              <span class="overlay__label">Record</span>
+              <span id="finalBest" class="overlay__value">0</span>
+            </div>
+          </div>
+          <button id="retryBtn" class="primary">Reintentar</button>
+        </div>
+      </section>
+
+      <section class="instructions">
+        <p>
+          <strong>Un solo boton:</strong> presiona click o <span class="key">ESPACIO</span> para clavar la opcion
+          que esta resaltada.
+        </p>
+        <p>
+          Cada acierto acelera el ritmo. Si erras, chau partida. Meta: racha larga y best score.
+        </p>
+      </section>
+
+      <footer class="footer">
+        <button id="startBtn" class="primary">Arrancar</button>
+        <button id="restartBtn" class="ghost" disabled>Reintentar</button>
+      </footer>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
